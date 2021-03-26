@@ -1,0 +1,71 @@
+conky.config = {
+  alignment = 'top_right',
+  background = false,
+  border_width = 0.5,
+  cpu_avg_samples = 4,
+  default_color = 'white',
+  default_outline_color = 'grey',
+  default_shade_color = 'black',
+  draw_borders = true,
+  draw_graph_borders = true,
+  draw_outline = false,
+  draw_shades = false,
+  use_xft = true,
+  font = 'Fira Sans Light Light:size=10',
+  gap_x = 30,
+  gap_y = 60,
+  maximum_width = 200,
+  minimum_height = 5,
+  minimum_width = 5,
+  net_avg_samples = 2,
+  double_buffer = true,
+  out_to_console = false,
+  out_to_stderr = false,
+  extra_newline = false,
+  own_window = true,
+  own_window_class = 'Conky',
+  own_window_argb_visual = true,
+  own_window_type = 'dock',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  stippled_borders = 0,
+  update_interval = 1,
+  uppercase = false,
+  use_spacer = 'none',
+  show_graph_scale = false,
+  show_graph_range = false
+}
+
+conky.text = [[
+  ${font Fira Sans Light Light:Bold:size=16}${color 14f7ff} THINKPAD
+  # SYS
+  ${font Fira Sans Light:Bold:size=10}${color 14f7ff}SYSTEM ${hr 2}$color${font}${offset 1}
+  Kernel $alignr $kernel
+  Uptime $alignr $uptime
+
+  # CPU
+  ${font Fira Sans Light:Bold:size=10}${color 14f7ff}CPU${hr 2}$color${font}${offset 1}
+  Temperature $alignr ${acpitemp}°C
+  ${font Fira Sans Light:size=7}USAGE (AVG): $font${cpu cpu0}%
+  ${cpugraph cpu0 00FF00  14f7ff}
+  
+  ${font Fira Sans Light:Bold:size=10}${color 14f7ff}MEM${hr 2}$color${font}${offset 1}
+  ${font Fira Sans Light:size=8}RAM: $font$memperc% ${alignr}$mem ${font Fira Sans Light:size=7}/ $font$memmax  
+  ${font Fira Sans Light:size=8}SWAP: $font$swapperc% ${alignr}$swap ${font Fira Sans Light:size=7}/ $font$swapmax 
+  ${swapbar 4}
+
+# NETWORK
+  ${font Fira Sans Light:Bold:size=10}${color 14f7ff}NETWORK${color}${font Fira Sans Light:size=10}${color 14f7ff} ${hr 2}$color$font
+ ${font Fira Sans Light:size=8}IP:  $font${addr wlp0s20f3} 
+
+# DISK
+ ${font Fira Sans Light:Bold:size=10}${color 14f7ff}DISK ${hr 2}$color${font}${offset 1}
+ ${offset 4}${color FFFDE2}${font Fira Sans Light:size=8}home: (${fs_type /home}) $color${fs_bar 4 /home/}
+
+${font Fira Sans Light:Bold:size=10}${color 14f7ff}BATTERY ${hr 2}$color${font}${offset 1}
+${font Fira Sans Light:size=7}USAGE: $font${battery_bar BAT0 303030 C0C0C0}
+${font Fira Sans Light:size=7}REMAINING: $font$battery_time
+${color 14f7ff}${hr 2}$color
+
+
+]]
