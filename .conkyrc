@@ -47,7 +47,7 @@ conky.text = [[
   ${font Fira Sans Light:Bold:size=10}${color 14f7ff}CPU${hr 2}$color${font}${offset 1}
   Temperature $alignr ${acpitemp}°C
   ${font Fira Sans Light:size=7}USAGE (AVG): $font${cpu cpu0}%
-  ${cpugraph cpu0 00FF00  14f7ff}
+  ${cpugraph cpu0 14f7ff  000000}
   
   ${font Fira Sans Light:Bold:size=10}${color 14f7ff}MEM${hr 2}$color${font}${offset 1}
   ${font Fira Sans Light:size=8}RAM: $font$memperc% ${alignr}$mem ${font Fira Sans Light:size=7}/ $font$memmax  
